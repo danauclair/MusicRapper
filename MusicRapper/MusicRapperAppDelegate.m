@@ -158,10 +158,6 @@ static CGFloat MINI_WIDTH = 440.0;
   }
 }
 
-- (void) apiCallback:(id)sender {
-  NSLog(@"callback");
-}
-
 - (void) setMini:(BOOL)shouldBeMini {
   mini = shouldBeMini;
   
