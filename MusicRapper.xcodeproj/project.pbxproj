@@ -17,8 +17,27 @@
 		34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D213E8DC400039CAC9 /* InfoPlist.strings */; };
 		34FB32D713E8DC400039CAC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB32D613E8DC400039CAC9 /* main.m */; };
 		34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D813E8DC400039CAC9 /* Credits.rtf */; };
-		34FB32DD13E8DC400039CAC9 /* MusicRapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */; };
-		34FB32E013E8DC400039CAC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32DE13E8DC400039CAC9 /* MainMenu.xib */; };
+		6811B24A140CCBE10000217C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6811B249140CCBE10000217C /* MainMenu.xib */; };
+		68B53DB8140CCA1D00D3FEF2 /* FMCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB1140CCA1D00D3FEF2 /* FMCallback.m */; };
+		68B53DB9140CCA1D00D3FEF2 /* FMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB3140CCA1D00D3FEF2 /* FMEngine.m */; };
+		68B53DBA140CCA1D00D3FEF2 /* FMEngineURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB5140CCA1D00D3FEF2 /* FMEngineURLConnection.m */; };
+		68B53DBB140CCA1D00D3FEF2 /* NSString+FMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB7140CCA1D00D3FEF2 /* NSString+FMEngine.m */; };
+		68B53DD6140CCA3800D3FEF2 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DBE140CCA3800D3FEF2 /* NSObject+SBJson.m */; };
+		68B53DD7140CCA3800D3FEF2 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DC1140CCA3800D3FEF2 /* SBJsonParser.m */; };
+		68B53DD8140CCA3800D3FEF2 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DC3140CCA3800D3FEF2 /* SBJsonStreamParser.m */; };
+		68B53DD9140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DC5140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.m */; };
+		68B53DDA140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DC7140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.m */; };
+		68B53DDB140CCA3800D3FEF2 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DC9140CCA3800D3FEF2 /* SBJsonStreamParserState.m */; };
+		68B53DDC140CCA3800D3FEF2 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DCB140CCA3800D3FEF2 /* SBJsonStreamWriter.m */; };
+		68B53DDD140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DCD140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.m */; };
+		68B53DDE140CCA3800D3FEF2 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DCF140CCA3800D3FEF2 /* SBJsonStreamWriterState.m */; };
+		68B53DDF140CCA3800D3FEF2 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DD1140CCA3800D3FEF2 /* SBJsonTokeniser.m */; };
+		68B53DE0140CCA3800D3FEF2 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DD3140CCA3800D3FEF2 /* SBJsonUTF8Stream.m */; };
+		68B53DE1140CCA3800D3FEF2 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DD5140CCA3800D3FEF2 /* SBJsonWriter.m */; };
+		68B53DE3140CCA5900D3FEF2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B53DE2140CCA5900D3FEF2 /* Security.framework */; };
+		68B53DE8140CCAC400D3FEF2 /* Scrobbler.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DE5140CCAC400D3FEF2 /* Scrobbler.m */; };
+		68B53DE9140CCAC400D3FEF2 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DE7140CCAC400D3FEF2 /* SongInfo.m */; };
+		68B53DEC140CCAEF00D3FEF2 /* MusicRapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DEB140CCAEF00D3FEF2 /* MusicRapperAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +55,47 @@
 		34FB32D513E8DC400039CAC9 /* MusicRapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRapper-Prefix.pch"; sourceTree = "<group>"; };
 		34FB32D613E8DC400039CAC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34FB32D913E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		34FB32DB13E8DC400039CAC9 /* MusicRapperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicRapperAppDelegate.h; sourceTree = "<group>"; };
-		34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicRapperAppDelegate.m; sourceTree = "<group>"; };
-		34FB32DF13E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6811B249140CCBE10000217C /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		68B53DB0140CCA1D00D3FEF2 /* FMCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCallback.h; sourceTree = "<group>"; };
+		68B53DB1140CCA1D00D3FEF2 /* FMCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCallback.m; sourceTree = "<group>"; };
+		68B53DB2140CCA1D00D3FEF2 /* FMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMEngine.h; sourceTree = "<group>"; };
+		68B53DB3140CCA1D00D3FEF2 /* FMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMEngine.m; sourceTree = "<group>"; };
+		68B53DB4140CCA1D00D3FEF2 /* FMEngineURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMEngineURLConnection.h; sourceTree = "<group>"; };
+		68B53DB5140CCA1D00D3FEF2 /* FMEngineURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMEngineURLConnection.m; sourceTree = "<group>"; };
+		68B53DB6140CCA1D00D3FEF2 /* NSString+FMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FMEngine.h"; sourceTree = "<group>"; };
+		68B53DB7140CCA1D00D3FEF2 /* NSString+FMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FMEngine.m"; sourceTree = "<group>"; };
+		68B53DBD140CCA3800D3FEF2 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		68B53DBE140CCA3800D3FEF2 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		68B53DBF140CCA3800D3FEF2 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		68B53DC0140CCA3800D3FEF2 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		68B53DC1140CCA3800D3FEF2 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		68B53DC2140CCA3800D3FEF2 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		68B53DC3140CCA3800D3FEF2 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		68B53DC4140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		68B53DC5140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		68B53DC6140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		68B53DC7140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		68B53DC8140CCA3800D3FEF2 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		68B53DC9140CCA3800D3FEF2 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		68B53DCA140CCA3800D3FEF2 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		68B53DCB140CCA3800D3FEF2 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		68B53DCC140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		68B53DCD140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		68B53DCE140CCA3800D3FEF2 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		68B53DCF140CCA3800D3FEF2 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		68B53DD0140CCA3800D3FEF2 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		68B53DD1140CCA3800D3FEF2 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		68B53DD2140CCA3800D3FEF2 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		68B53DD3140CCA3800D3FEF2 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		68B53DD4140CCA3800D3FEF2 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		68B53DD5140CCA3800D3FEF2 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		68B53DE2140CCA5900D3FEF2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		68B53DE4140CCAC400D3FEF2 /* Scrobbler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scrobbler.h; sourceTree = "<group>"; };
+		68B53DE5140CCAC400D3FEF2 /* Scrobbler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scrobbler.m; sourceTree = "<group>"; };
+		68B53DE6140CCAC400D3FEF2 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
+		68B53DE7140CCAC400D3FEF2 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
+		68B53DEA140CCAEF00D3FEF2 /* MusicRapperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicRapperAppDelegate.h; sourceTree = "<group>"; };
+		68B53DEB140CCAEF00D3FEF2 /* MusicRapperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicRapperAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B53DE3140CCA5900D3FEF2 /* Security.framework in Frameworks */,
 				347FAFC513E909D900795C4A /* WebKit.framework in Frameworks */,
 				34B974D813F0C67000FE901E /* AppKit.framework in Frameworks */,
 				34B974D913F0C67100FE901E /* CoreData.framework in Frameworks */,
@@ -61,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				34FB32CF13E8DC400039CAC9 /* MusicRapper */,
+				68B53DAF140CCA1D00D3FEF2 /* FMEngine */,
+				68B53DBC140CCA3800D3FEF2 /* SBJson */,
 				34FB32C813E8DC400039CAC9 /* Frameworks */,
 				34FB32C613E8DC400039CAC9 /* Products */,
 			);
@@ -77,6 +137,7 @@
 		34FB32C813E8DC400039CAC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68B53DE2140CCA5900D3FEF2 /* Security.framework */,
 				34B9763E13F0C75100FE901E /* Cocoa.framework */,
 				347FAFC413E909D900795C4A /* WebKit.framework */,
 				34FB32CB13E8DC400039CAC9 /* Other Frameworks */,
@@ -97,11 +158,15 @@
 		34FB32CF13E8DC400039CAC9 /* MusicRapper */ = {
 			isa = PBXGroup;
 			children = (
-				34FB32DB13E8DC400039CAC9 /* MusicRapperAppDelegate.h */,
-				34FB32DC13E8DC400039CAC9 /* MusicRapperAppDelegate.m */,
+				68B53DEA140CCAEF00D3FEF2 /* MusicRapperAppDelegate.h */,
+				68B53DEB140CCAEF00D3FEF2 /* MusicRapperAppDelegate.m */,
 				3400155813E8E9AC007924CE /* MusicRapperApplication.h */,
 				3400155913E8E9AC007924CE /* MusicRapperApplication.m */,
-				34FB32DE13E8DC400039CAC9 /* MainMenu.xib */,
+				68B53DE6140CCAC400D3FEF2 /* SongInfo.h */,
+				68B53DE7140CCAC400D3FEF2 /* SongInfo.m */,
+				68B53DE4140CCAC400D3FEF2 /* Scrobbler.h */,
+				68B53DE5140CCAC400D3FEF2 /* Scrobbler.m */,
+				6811B249140CCBE10000217C /* MainMenu.xib */,
 				34FB32D013E8DC400039CAC9 /* Supporting Files */,
 			);
 			path = MusicRapper;
@@ -118,6 +183,53 @@
 				34FB32D813E8DC400039CAC9 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68B53DAF140CCA1D00D3FEF2 /* FMEngine */ = {
+			isa = PBXGroup;
+			children = (
+				68B53DB0140CCA1D00D3FEF2 /* FMCallback.h */,
+				68B53DB1140CCA1D00D3FEF2 /* FMCallback.m */,
+				68B53DB2140CCA1D00D3FEF2 /* FMEngine.h */,
+				68B53DB3140CCA1D00D3FEF2 /* FMEngine.m */,
+				68B53DB4140CCA1D00D3FEF2 /* FMEngineURLConnection.h */,
+				68B53DB5140CCA1D00D3FEF2 /* FMEngineURLConnection.m */,
+				68B53DB6140CCA1D00D3FEF2 /* NSString+FMEngine.h */,
+				68B53DB7140CCA1D00D3FEF2 /* NSString+FMEngine.m */,
+			);
+			path = FMEngine;
+			sourceTree = "<group>";
+		};
+		68B53DBC140CCA3800D3FEF2 /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				68B53DBD140CCA3800D3FEF2 /* NSObject+SBJson.h */,
+				68B53DBE140CCA3800D3FEF2 /* NSObject+SBJson.m */,
+				68B53DBF140CCA3800D3FEF2 /* SBJson.h */,
+				68B53DC0140CCA3800D3FEF2 /* SBJsonParser.h */,
+				68B53DC1140CCA3800D3FEF2 /* SBJsonParser.m */,
+				68B53DC2140CCA3800D3FEF2 /* SBJsonStreamParser.h */,
+				68B53DC3140CCA3800D3FEF2 /* SBJsonStreamParser.m */,
+				68B53DC4140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.h */,
+				68B53DC5140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.m */,
+				68B53DC6140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.h */,
+				68B53DC7140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.m */,
+				68B53DC8140CCA3800D3FEF2 /* SBJsonStreamParserState.h */,
+				68B53DC9140CCA3800D3FEF2 /* SBJsonStreamParserState.m */,
+				68B53DCA140CCA3800D3FEF2 /* SBJsonStreamWriter.h */,
+				68B53DCB140CCA3800D3FEF2 /* SBJsonStreamWriter.m */,
+				68B53DCC140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.h */,
+				68B53DCD140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.m */,
+				68B53DCE140CCA3800D3FEF2 /* SBJsonStreamWriterState.h */,
+				68B53DCF140CCA3800D3FEF2 /* SBJsonStreamWriterState.m */,
+				68B53DD0140CCA3800D3FEF2 /* SBJsonTokeniser.h */,
+				68B53DD1140CCA3800D3FEF2 /* SBJsonTokeniser.m */,
+				68B53DD2140CCA3800D3FEF2 /* SBJsonUTF8Stream.h */,
+				68B53DD3140CCA3800D3FEF2 /* SBJsonUTF8Stream.m */,
+				68B53DD4140CCA3800D3FEF2 /* SBJsonWriter.h */,
+				68B53DD5140CCA3800D3FEF2 /* SBJsonWriter.m */,
+			);
+			path = SBJson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +257,9 @@
 /* Begin PBXProject section */
 		34FB32BC13E8DC400039CAC9 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = 34FB32BF13E8DC400039CAC9 /* Build configuration list for PBXProject "MusicRapper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -169,8 +284,8 @@
 			files = (
 				34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */,
 				34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */,
-				34FB32E013E8DC400039CAC9 /* MainMenu.xib in Resources */,
 				347FAFC913E90C0B00795C4A /* gm-icon.icns in Resources */,
+				6811B24A140CCBE10000217C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +297,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FB32D713E8DC400039CAC9 /* main.m in Sources */,
-				34FB32DD13E8DC400039CAC9 /* MusicRapperAppDelegate.m in Sources */,
 				3400155A13E8E9AC007924CE /* MusicRapperApplication.m in Sources */,
+				68B53DB8140CCA1D00D3FEF2 /* FMCallback.m in Sources */,
+				68B53DB9140CCA1D00D3FEF2 /* FMEngine.m in Sources */,
+				68B53DBA140CCA1D00D3FEF2 /* FMEngineURLConnection.m in Sources */,
+				68B53DBB140CCA1D00D3FEF2 /* NSString+FMEngine.m in Sources */,
+				68B53DD6140CCA3800D3FEF2 /* NSObject+SBJson.m in Sources */,
+				68B53DD7140CCA3800D3FEF2 /* SBJsonParser.m in Sources */,
+				68B53DD8140CCA3800D3FEF2 /* SBJsonStreamParser.m in Sources */,
+				68B53DD9140CCA3800D3FEF2 /* SBJsonStreamParserAccumulator.m in Sources */,
+				68B53DDA140CCA3800D3FEF2 /* SBJsonStreamParserAdapter.m in Sources */,
+				68B53DDB140CCA3800D3FEF2 /* SBJsonStreamParserState.m in Sources */,
+				68B53DDC140CCA3800D3FEF2 /* SBJsonStreamWriter.m in Sources */,
+				68B53DDD140CCA3800D3FEF2 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				68B53DDE140CCA3800D3FEF2 /* SBJsonStreamWriterState.m in Sources */,
+				68B53DDF140CCA3800D3FEF2 /* SBJsonTokeniser.m in Sources */,
+				68B53DE0140CCA3800D3FEF2 /* SBJsonUTF8Stream.m in Sources */,
+				68B53DE1140CCA3800D3FEF2 /* SBJsonWriter.m in Sources */,
+				68B53DE8140CCAC400D3FEF2 /* Scrobbler.m in Sources */,
+				68B53DE9140CCAC400D3FEF2 /* SongInfo.m in Sources */,
+				68B53DEC140CCAEF00D3FEF2 /* MusicRapperAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,14 +337,6 @@
 				34FB32D913E8DC400039CAC9 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		34FB32DE13E8DC400039CAC9 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				34FB32DF13E8DC400039CAC9 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

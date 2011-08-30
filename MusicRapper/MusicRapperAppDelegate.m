@@ -13,6 +13,7 @@
 @synthesize window;
 @synthesize webView;
 @synthesize timer;
+@synthesize toggleLastFMItem;
 
 static NSString *PREF_WINDOW_FRAME_FULL = @"windowFrameFull";
 static NSString *PREF_WINDOW_FRAME_MINI = @"windowFrameMini";
@@ -20,11 +21,13 @@ static NSString *PREF_WINDOW_FRAME_MINI = @"windowFrameMini";
 static CGFloat MINI_HEIGHT = 55.0 + 22.0;
 static CGFloat MINI_WIDTH = 440.0;
 
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  NSString *urlText = @"http://music.google.com/";
-  [[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlText]]];
+  scrobbler = [[Scrobbler alloc] init];
+  scrobbler.delegate = self;
+  [scrobbler checkForExistingSession];
+  
+  [self loadMusicPage];
 
   mini = NO;
   hasLoadedMini = NO;
@@ -38,11 +41,16 @@ static CGFloat MINI_WIDTH = 440.0;
   lastAdvanced = 0;
   self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
                                                 target:self
-                                              selector:@selector(maybeAdvance:)
+                                              selector:@selector(tick:)
                                               userInfo:nil
                                                repeats:YES];
 }
 
+- (void) loadMusicPage {
+  NSString *urlText = @"http://music.google.com/";
+  [[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlText]]];
+}
+  
 - (void) playPause:(id)sender {
   [[webView windowScriptObject] evaluateWebScript:@"SJBpost('playPause');"];
 }
@@ -55,13 +63,7 @@ static CGFloat MINI_WIDTH = 440.0;
   [[webView windowScriptObject] evaluateWebScript:@"SJBpost('prevSong');"];
 }
 
-- (void) maybeAdvance:(id)sender {
-  NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-  if (now - lastAdvanced < 4.0) {
-    // Don't attempt to hit "Next" a bunch of times in a row.
-    return;
-  }
-
+- (void) tick:(id)sender {
   //
   // WARNING: This is pretty crazy. This fixes a bug where the
   // player keeps playing past the end of the song instead of
@@ -90,15 +92,74 @@ static CGFloat MINI_WIDTH = 440.0;
     "};"
     "var currentTime = convertToSeconds(document.getElementById('currentTime'));"
     "var duration = convertToSeconds(document.getElementById('duration'));"
-    "return (currentTime && duration && currentTime > duration);"
+    "var artist = document.getElementById('playerArtist').firstChild.innerHTML;"
+    "var title = document.getElementById('playerSongTitle').firstChild.innerHTML;"
+    "return {"
+      "artist: artist,"
+      "title: title,"
+      "currentTime: currentTime,"
+      "duration: duration,"
+      "shouldAdvance: (currentTime && duration && currentTime > duration)"
+    "};"
   "})()";
-  NSObject *result = [[webView windowScriptObject] evaluateWebScript:javascript];
 
-  if ([result isEqualTo:[NSNumber numberWithInt:1]]) {
+  id result = [[webView windowScriptObject] evaluateWebScript:javascript];
+
+  if (![result isMemberOfClass:[WebUndefined class]]) {
+    [self processScriptResult:result];
+  }
+}
+
+- (void) processScriptResult:(WebScriptObject *)result {
+  // Results from JS object. It would be nice to have the album to scrobble as well, but it isn't easily available.
+  // TODO: Is there anything else to check and replace besides &amp;s? Cocoa does not provide a great way to do this automatically.
+  NSString *artist = [[result valueForKey:@"artist"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+  NSString *title = [[result valueForKey:@"title"] stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+  NSNumber *duration = [result valueForKey:@"duration"];
+  NSNumber *currentTime = [result valueForKey:@"currentTime"];
+  BOOL shouldForceAdvance = [[result valueForKey:@"shouldAdvance"] isEqualTo:[NSNumber numberWithInt:1]];
+  
+  // Check if a track change has occured...
+  if (![currentSong.title isEqualToString:title] || ![currentSong.artist isEqualToString:artist]) {
+    NSLog(@"Song Change: %@ - %@", artist, title);
+
+    [currentSong release];
+    currentSong = [[SongInfo alloc] init];
+    currentSong.artist = artist;
+    currentSong.title = title;
+    currentSong.duration = [duration intValue]; // this usually isn't ready yet
+    
+    // update now playing
+    if (scrobbler.isEnabled) {
+      [scrobbler updateNowPlaying:currentSong];
+    }
+  } else {
+    // allow duration to be set later since it shows up late to the party
+    if (currentSong.duration != [duration intValue]) {
+      currentSong.duration = [duration intValue];
+    }
+
+    // increment elapsed time within SongInfo if necessary
+    [currentSong markTime:[currentTime intValue]];
+
+    // scrobble the song to last.fm if we can
+    if (scrobbler.isEnabled && !currentSong.hasScrobbled && [currentSong shouldScrobble]) {
+      [scrobbler scrobbleSong:currentSong];
+      currentSong.hasScrobbled = YES;
+    }
+  }
+
+  // Don't attempt to hit "Next" a bunch of times in a row.
+  NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+  if (shouldForceAdvance && now - lastAdvanced > 4.0) {
     NSLog(@"Advanced to the next track using magic.");
-    [self nextSong:sender];
+    [self nextSong:self];
     lastAdvanced = now;
   }
+}
+
+- (void) apiCallback:(id)sender {
+  NSLog(@"callback");
 }
 
 - (void) setMini:(BOOL)shouldBeMini {
@@ -153,6 +214,41 @@ static CGFloat MINI_WIDTH = 440.0;
   } else {
     [window saveFrameUsingName:PREF_WINDOW_FRAME_MINI];
   }
+}
+
+- (IBAction) toggleLastFM:(id)sender {
+  if (scrobbler.isEnabled) {
+    [scrobbler disable];
+    toggleLastFMItem.title = @"Connect to Last.fm";
+  } else {
+    [scrobbler enable];
+  }
+}
+
+- (void) shouldRequestUserAuthorization:(NSURL *)url {
+  // Redirect user to the authroization page and wait until webView loads
+  // the grant access page to call the API and get a session key.
+  [webView setFrameLoadDelegate:self];
+  [[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
+- (void) webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+  // Detect if user accepted Last.fm auth... this kind of sucks
+  NSString *javascript = @"(function(){"
+    "return { location: window.location.href };"
+  "})()";
+  NSData *result = [[webView windowScriptObject] evaluateWebScript:javascript];
+  NSString *location = [result valueForKey:@"location"];
+  
+  // If it was a successful auth, make request to get session key & reload Google music.
+  if ([location isEqualToString:@"http://www.last.fm/api/grantaccess"]) {
+    [scrobbler startSession];
+    [self loadMusicPage];
+  }
+}
+
+- (void) didAuthenticateLastFM:(NSString *)username {
+  toggleLastFMItem.title = [@"Logout " stringByAppendingString:username];
 }
 
 @end
