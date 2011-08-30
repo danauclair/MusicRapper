@@ -17,7 +17,7 @@
 		34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D213E8DC400039CAC9 /* InfoPlist.strings */; };
 		34FB32D713E8DC400039CAC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB32D613E8DC400039CAC9 /* main.m */; };
 		34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 34FB32D813E8DC400039CAC9 /* Credits.rtf */; };
-		6811B24A140CCBE10000217C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6811B249140CCBE10000217C /* MainMenu.xib */; };
+		68399006140CD41800D8DE13 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68399004140CD41800D8DE13 /* MainMenu.xib */; };
 		68B53DB8140CCA1D00D3FEF2 /* FMCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB1140CCA1D00D3FEF2 /* FMCallback.m */; };
 		68B53DB9140CCA1D00D3FEF2 /* FMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB3140CCA1D00D3FEF2 /* FMEngine.m */; };
 		68B53DBA140CCA1D00D3FEF2 /* FMEngineURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B53DB5140CCA1D00D3FEF2 /* FMEngineURLConnection.m */; };
@@ -55,7 +55,7 @@
 		34FB32D513E8DC400039CAC9 /* MusicRapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicRapper-Prefix.pch"; sourceTree = "<group>"; };
 		34FB32D613E8DC400039CAC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34FB32D913E8DC400039CAC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		6811B249140CCBE10000217C /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		68399005140CD41800D8DE13 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		68B53DB0140CCA1D00D3FEF2 /* FMCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCallback.h; sourceTree = "<group>"; };
 		68B53DB1140CCA1D00D3FEF2 /* FMCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCallback.m; sourceTree = "<group>"; };
 		68B53DB2140CCA1D00D3FEF2 /* FMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMEngine.h; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				68B53DE7140CCAC400D3FEF2 /* SongInfo.m */,
 				68B53DE4140CCAC400D3FEF2 /* Scrobbler.h */,
 				68B53DE5140CCAC400D3FEF2 /* Scrobbler.m */,
-				6811B249140CCBE10000217C /* MainMenu.xib */,
+				68399004140CD41800D8DE13 /* MainMenu.xib */,
 				34FB32D013E8DC400039CAC9 /* Supporting Files */,
 			);
 			path = MusicRapper;
@@ -285,7 +285,7 @@
 				34FB32D413E8DC400039CAC9 /* InfoPlist.strings in Resources */,
 				34FB32DA13E8DC400039CAC9 /* Credits.rtf in Resources */,
 				347FAFC913E90C0B00795C4A /* gm-icon.icns in Resources */,
-				6811B24A140CCBE10000217C /* MainMenu.xib in Resources */,
+				68399006140CD41800D8DE13 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +337,14 @@
 				34FB32D913E8DC400039CAC9 /* en */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		68399004140CD41800D8DE13 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68399005140CD41800D8DE13 /* en */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
