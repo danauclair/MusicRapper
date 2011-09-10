@@ -157,7 +157,7 @@
 }
 
 - (void) updateNowPlayingCallback:(NSString *)identifier data:(id)data {
-  NSLog(@"Updated Now Playing on Last.fm: %@", [parser objectWithData:data]);
+  //NSLog(@"Updated Now Playing on Last.fm: %@", [parser objectWithData:data]);
 }
 
 - (void) scrobbleSong:(SongInfo *)song {
@@ -182,9 +182,7 @@
 }
 
 - (void) scrobbleSongCallback:(NSString *)identifier data:(id)data {
-   NSLog(@"Scrobbled on Last.fm: %@", [parser objectWithData:data]);
+   //NSLog(@"Scrobbled on Last.fm: %@", [parser objectWithData:data]);
 }
-
-
 
 @end

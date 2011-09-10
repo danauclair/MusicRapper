@@ -41,8 +41,6 @@
     // has elapsed. If the user seeks it will be +/- more than 1.
     if (delta == 1) {
       timeElapsed += delta;
-      // TODO: This log gets pretty chatty, remove at will.
-      NSLog(@"%@ - %@ - %.1f%% listened to", artist, title, [self percentageCompleted] * 100);
     }
 
     lastTime = currentTime;
